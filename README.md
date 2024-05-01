@@ -1,7 +1,3 @@
-<div style="text-align: center;">
-<img src="https://www.tbardini.com/assets/TBardini-dot-dark-MIMyJ2zW.png" width="200" alt="Demo Report Logo">
-</div>
-
 # Custom Report
 
 _Playwright and Next.js Driven Custom Reporting Scripts_
@@ -94,3 +90,7 @@ Playwright is integrated into our project environment, allowing for seamless set
   "generate:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js && node ./script/updateReportId.js"
 }
 ```
+
+<div style="text-align: center; margin-top: 100px">
+<img src="https://www.tbardini.com/assets/TBardini-dot-dark-MIMyJ2zW.png" width="200" alt="Demo Report Logo">
+</div>
