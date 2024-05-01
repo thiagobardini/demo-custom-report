@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/getreport/report.jslib/getLatestReports.js", "app/reports/[reportId]/[reportName]/TestReport.tsx", "app/home/HomePage.tsx", "app/components/shared/MissingTests.tsx", "app/tests/[slug]/page.jsx", "app/tests/[slug]/[history]/page.jsx", "app/reports/test/page.jsx", "app/api/reports/route.ts", "app/api/index/route.ts", ".examples/SearchInput.tsx", ".examples/ReportTable.tsx"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-grow {
+  flex: 1;
+}
+
+/* styles/globals.css */
+body {
+  background-image: url("/estimate-page-background.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 78px);
+}
+
+.text {
+  @media (max-width: em(576px)) {
+    font-size: small;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+/* Make scrollbar visible */
+.table-responsive::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 8px; /* height of the horizontal scrollbar */
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5); /* color and opacity of the scrollbar */
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* creates a subtle inset effect on the scrollbar */
+}
+
+.title-report {
+  color: var(--mantine-color-blue-0);
+}
+
+.description-report {
+  color: var(--mantine-color-white);
+}
+
+
+.button-disabled {
+  &:disabled,
+  &[data-disabled] {
+    border-color: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4)) !important;
+    background-color: transparent !important;
+  }
+}
+
+.text-report {
+  @media (max-width: em(576px)) {
+    font-size: small;
+  }
+}
+

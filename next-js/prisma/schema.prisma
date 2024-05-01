@@ -1,0 +1,94 @@
+// ref: https://www.prisma.io/docs/orm/prisma-schema/data-model/relations
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model IndexReports {
+  id         String       @id @default(auto()) @map("_id") @db.ObjectId
+  reportId   String       @unique
+  reportDate String
+  tests      IndexTests[] // One to one relationship
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // reportId   String @map("reportIdIndex")  // rename the field reportId, but this keeps the same name in the database
+  // @@map("index") // Rename the model to index
+}
+
+model IndexTests {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  dirName    String?
+  title      String?
+  testId     String?
+  testPath   String?
+  dateTest   String?
+  typeOfTest String?
+  passCount  Int?
+  failCount  Int?
+  totalTests Int?
+
+  indexReports  IndexReports? @relation(fields: [indexReportId], references: [id])
+  indexReportId String?       @db.ObjectId
+}
+
+model ReportDescribe {
+  id               String                @id @default(auto()) @map("_id") @db.ObjectId
+  reportId         String
+  testDescribeId   String                @unique
+  testDescribe     String
+  testDescribePath String?
+  testDescribeDate String?
+  typeOfTest       String
+  ticketsJira      String?
+  passCount        Int
+  failCount        Int
+  specs            ReportDescribeTests[] // One to many relationship
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime              @updatedAt
+}
+
+model ReportDescribeTests {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  specId             String
+  specTitle          String
+  specUrl            String?
+  specReporter       String?
+  specScreenshotPath String?
+  specStatus         String
+  specJiraRef        String?
+  specJiraTicket     String?
+  specMessage        String?
+
+  reportDescribe   ReportDescribe? @relation(fields: [reportDescribeId], references: [id])
+  reportDescribeId String?         @db.ObjectId
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
+model ReportHistory {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  reportId        String
+  reportTestId    String
+  titleReport     String
+  titlePath       String
+  dateHistory     String?
+  changesDetected Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// model GlgoScript {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+
+//   script String?
+
+//   createdAt DateTime @default(now())
+// }

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "MiniMarket",
+    "reportId": "001",
+    "id": "Mini Market-001",
+    "titlePath": "mini-market-tbardini.vercel.app > Add Products to Cart",
+    "typeOfTest": "e2e",
+    "date": "05/01/2024 - 04:38 PM",
+    "tickets": "[\"TICKET-001\"]",
+    "passCount": 1,
+    "failCount": 0,
+    "specs": [
+      {
+        "testId": "001",
+        "title": "Add Products to Cart",
+        "websiteUrl": "mini-market-tbardini.vercel.app",
+        "reporter": "Thiago",
+        "screenshotPath": "mini-market-Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      }
+    ]
+  }
+]

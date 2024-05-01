@@ -1,0 +1,13 @@
+.title {
+  color: var(--mantine-color-blue-0);
+}
+
+.description {
+  color: var(--mantine-color-white);
+}
+
+.text {
+  @media (max-width: em(576px)) {
+    font-size: small;
+  }
+}
