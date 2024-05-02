@@ -1,0 +1,26 @@
+{
+  "reportId": "002",
+  "id": "GlobalLink Go-002",
+  "title": "GloballinkGo",
+  "titlePath": "globallinkgo.com > WordsServedEstimatePage",
+  "date": "05/02/2024 - 03:36 PM",
+  "changesDetected": [
+    {
+      "testDetails": {
+        "testId": "020",
+        "title": "openai.com",
+        "reporter": "Thiago",
+        "newTest": false,
+        "status": "Fail",
+        "previous": {
+          "statusChange": "Pass",
+          "messageChange": "Test passed successfully"
+        },
+        "actual": {
+          "statusChange": "Fail",
+          "messageChange": "API/QuickQuote - Cancelled - Getting 404 status"
+        }
+      }
+    }
+  ]
+}

@@ -6,8 +6,8 @@
   "scripts": {
     "test:ui": "npx playwright test ./tests/* --ui",
     "test:custom-report": "npx playwright test --grep @smoke",
-    "generate:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js && node ./script/updateReportId.js",
-    "playground:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js"
+    "playground:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js",
+    "generate:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js && node ./script/updateReportId.js"
   },
   "keywords": [],
   "author": "",

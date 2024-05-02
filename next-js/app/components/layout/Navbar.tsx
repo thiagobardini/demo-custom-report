@@ -50,7 +50,7 @@ const Navbar = () => {
           w='100%'
           // className='md:h-28 sm:h20 py-2'
           className='py-2'
-          pt={isTabletSize ? 20 : 20}
+          pt={isTabletSize ? 10 : 20}
           bg='background1.2'
           pos='fixed'
           top={0}
@@ -62,11 +62,14 @@ const Navbar = () => {
           <Box w='100%' h='100%' maw={1280} mx='auto' px='1rem' pt={isTabletSize ? 0 : 20}>
             <Flex h='100%' w='100%' justify={{ base: "center", sm: "space-between" }} align='center' px='1rem'>
               <Link href='/' onClick={closeDropdown}>
-                <Flex justify={{ base: "center", sm: "space-between" }} align='center' px='1rem' direction='row'>
-                  <Box style={{ display: "block", position: "fixed", mr: 2 }}>
-                    <Image src={"/animations/tb-logo-glasses.gif"} alt={"TBardini navigation logo"} width={isTabletSize ? 120 : 120} height={isTabletSize ? 50 : 75} />
+                <Flex justify={{ base: "center", sm: "space-between" }} align='center' direction='row'>
+                  <Box display={{ base: "none", md: "block" }} style={{ position: "fixed", mr: 2 }}>
+                    <Image src={"/animations/tb-logo-glasses.gif"} alt={"TBardini navigation logo"} width={120} height={75} />
                   </Box>
-                  <Text display={{ base: "block", sm: "block" }} c='text1.9' style={{ fontSize: isTabletSize ? "1.9rem" : "2.4rem", fontWeight: 700, paddingLeft: "130px" }}>
+                  <Box display={{ base: "block", md: "none" }}>
+                    <Image src={"/images/tbtag.png"} alt={"TBardini navigation logo"} width={70} height={70} />
+                  </Box>
+                  <Text display={{ base: "block", sm: "block" }} c='text1.9' pl={{ base: "10px", md: "130px" }} style={{ fontSize: isTabletSize ? "1.4rem" : "2.4rem", fontWeight: 700 }}>
                     DEMO REPORT
                   </Text>
                 </Flex>
@@ -127,7 +130,7 @@ const Navbar = () => {
           </Box>
         </Flex>
         {selectReportContext !== 0 && (
-          <Box style={{ position: "fixed", zIndex: 2 }} top={isTabletSize ? "75px" : "108px"} right='0' w='100%' mx='auto'>
+          <Box style={{ position: "fixed", zIndex: 2 }} top={isTabletSize ? "90px" : "108px"} right='0' w='100%' mx='auto'>
             <HistoryBanner closeDropdown={closeDropdown} />
           </Box>
         )}

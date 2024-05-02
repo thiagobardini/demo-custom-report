@@ -1,0 +1,26 @@
+[
+  {
+    "title": "MiniMarket",
+    "reportId": "002",
+    "id": "Mini Market-002",
+    "titlePath": "mini-market-tbardini.vercel.app > Stripe Payment",
+    "typeOfTest": "e2e",
+    "date": "05/02/2024 - 03:36 PM",
+    "tickets": "[\"TICKET-001\"]",
+    "passCount": 1,
+    "failCount": 0,
+    "specs": [
+      {
+        "testId": "001",
+        "title": "Stripe Payment",
+        "websiteUrl": "mini-market-tbardini.vercel.app",
+        "reporter": "Thiago",
+        "screenshotPath": "mini-market-Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      }
+    ]
+  }
+]

@@ -1,21 +1,14 @@
 import { Box, Title, Accordion, Group, Flex, Text, Table } from "@mantine/core";
-import useSWR from "swr";
-import { ApiReportResponse } from "@/app/utils/interfaces";
-import Loading from "./Loading";
+import { ReportDescribeTypes } from "@/app/utils/interfaces";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+interface ReportDataTicket {
+  data: ReportDescribeTypes[];
+}
 
-const TicketsCovered = () => {
-  const { data, error, isLoading } = useSWR<ApiReportResponse>("/api/reports", fetcher);
+const TicketsCovered = (data: ReportDataTicket) => {
+  const { ticketsJira, specs } = data.data[0] || {};
 
-  if (error) return <div>Failed to load</div>;
-  if (isLoading) return <Loading />;
-
-  if (!data || !Array.isArray(data.reports) || data.reports.length === 0) {
-    return <div>No report data available</div>;
-  }
-
-  const { ticketsJira, specs } = data.reports[0] || {};
+  const activeTickets: string[] = [];
 
   const ticketsJiraArray = () => {
     if (!ticketsJira) {
@@ -32,29 +25,33 @@ const TicketsCovered = () => {
     return tickets;
   };
 
-  
   const rows = () => {
-  // Count the number of times each ticket appears in the specs
+    // Count the number of times each ticket appears in the specs
     const ticketCounts: { [key: string]: number } = {};
-  
+
     specs.forEach((spec) => {
       if (spec.specJiraTicket) {
         // Divide the tickets string and remove whitespace
-        const tickets = spec.specJiraTicket.split(",").map(t => t.trim());
-  
+        const tickets = spec.specJiraTicket.split(",").map((t) => t.trim());
+
         // Count each ticket
         tickets.forEach((ticket) => {
           if (ticket) {
             ticketCounts[ticket] = (ticketCounts[ticket] || 0) + 1;
+            if (ticketCounts[ticket] > 0) {
+              // if the ticket is not already in the activeTickets array, add it
+              if (!activeTickets.includes(ticket)) {
+                activeTickets.push(ticket);
+              }
+            }
           }
         });
       }
-    }) 
-
+    });
     return Object.entries(ticketCounts).map(([ticket, count], index) => (
       <Table.Tr key={index}>
         <Table.Td>
-          <a href={`https://github.com/thiagobardini`} target='_blank' rel='noopener noreferrer'>
+          <a href={`https://techqa1.translations.com/browse/${ticket}`} target='_blank' rel='noopener noreferrer'>
             {ticket}
           </a>
         </Table.Td>
@@ -62,7 +59,11 @@ const TicketsCovered = () => {
       </Table.Tr>
     ));
   };
-  
+
+  // Listen to the activeTickets array
+  rows();
+
+  console.log(activeTickets, "activeTickets");
   return (
     <>
       <Box px='xs' pt='xs' my='xs' style={{ backgroundColor: "#f8f9fa", boxShadow: "0px 1px 2px 0px rgba(0, 0, 0, 0.1)", borderRadius: "8x" }}>
@@ -78,16 +79,17 @@ const TicketsCovered = () => {
               <Accordion.Control style={{ padding: "0px !important" }} p={0}>
                 <Group wrap='nowrap'>
                   <div>
-                    <Title order={5}>Tickets Covered:</Title>
-                    <Text size='xs' c='dimmed' fw={400}>
-                      Report id: {"No report id"}
+                    {activeTickets.length === 0 ? <Title order={5}>No Active Tickets</Title> : <Title order={5}>Active Failed Tickets</Title>}
+
+                    <Text size='xs' c='red' fw={400}>
+                      {activeTickets.join(" | ")}
                     </Text>
                   </div>
                 </Group>
               </Accordion.Control>
               <Accordion.Panel>
                 <Flex justify='center'>
-                  {ticketsJiraArray().length === 0 ? (
+                  {activeTickets.length === 0  ? (
                     <Text size='xs' c='dimmed' fw={400}>
                       No tickets in the database.
                     </Text>

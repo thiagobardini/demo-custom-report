@@ -1,33 +1,29 @@
 [
   {
-    "reportId": "001",
-    "reportDate": "05/01/2024 - 04:38 PM",
+    "reportId": "002",
+    "reportDate": "05/02/2024 - 03:36 PM",
     "tests": [
       {
         "dirName": "GloballinkGo",
         "title": "GloballinkGo",
-        "testId": "GlobalLink Go-001",
+        "testId": "GlobalLink Go-002",
         "testPath": "globallinkgo.com > WordsServedEstimatePage",
-        "date": "05/01/2024 - 04:38 PM",
+        "date": "05/02/2024 - 03:36 PM",
         "typeOfTest": "e2e",
-        "passCount": 8,
-        "failCount": 12,
+        "passCount": 7,
+        "failCount": 13,
         "totalTests": 20
       },
       {
         "dirName": "MiniMarket",
         "title": "MiniMarket",
-        "testId": "Mini Market-001",
-        "testPath": "mini-market-tbardini.vercel.app > Add Products to Cart",
-        "date": "05/01/2024 - 04:38 PM",
+        "testId": "Mini Market-002",
+        "testPath": "mini-market-tbardini.vercel.app > Stripe Payment",
+        "date": "05/02/2024 - 03:36 PM",
         "typeOfTest": "e2e",
         "passCount": 1,
         "failCount": 0,
         "totalTests": 1
-      },
-      {
-        "directory": "WordsServedEstimatePage",
-        "message": "No test reports found"
       }
     ]
   }

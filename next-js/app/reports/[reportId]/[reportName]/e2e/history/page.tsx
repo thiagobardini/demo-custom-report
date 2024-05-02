@@ -5,6 +5,8 @@ import { ApiHistoryResponse } from '@/app/utils/interfaces'
 
 export function generateStaticParams() {
   return [
+    { reportId: "002", reportName: "MiniMarket", e2e: true, history: true },
+    { reportId: "002", reportName: "GloballinkGo", e2e: true, history: true },
     { reportId: '001', reportName: 'MiniMarket', e2e: true, history: true },
     { reportId: '001', reportName: 'GloballinkGo', e2e: true, history: true },
   ]

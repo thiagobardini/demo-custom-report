@@ -1,0 +1,235 @@
+[
+  {
+    "title": "GloballinkGo",
+    "reportId": "002",
+    "id": "GlobalLink Go-002",
+    "titlePath": "globallinkgo.com > WordsServedEstimatePage",
+    "typeOfTest": "e2e",
+    "date": "05/02/2024 - 03:36 PM",
+    "tickets": "[\"TICKET-2658\", \"TICKET-2663\", \"TICKET-489\"]",
+    "passCount": 7,
+    "failCount": 13,
+    "specs": [
+      {
+        "testId": "001",
+        "title": "www.tbardini.com",
+        "websiteUrl": "www.tbardini.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image001_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "002",
+        "title": "mantine.dev",
+        "websiteUrl": "mantine.dev",
+        "reporter": "Thiago",
+        "screenshotPath": "image002_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "003",
+        "title": "forbes.com",
+        "websiteUrl": "forbes.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image003_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "004",
+        "title": "techcrunch.com",
+        "websiteUrl": "techcrunch.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image004_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "005",
+        "title": "theguardian.com",
+        "websiteUrl": "theguardian.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image005_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "006",
+        "title": "wired.com",
+        "websiteUrl": "wired.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image006_FailedTo_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "No Jira Ref",
+        "message": "API/QuickQuote (200) has no spider jobs - Failed to connect to the website."
+      },
+      {
+        "testId": "007",
+        "title": "foodnetwork.com",
+        "websiteUrl": "foodnetwork.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image007_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      },
+      {
+        "testId": "008",
+        "title": "smittenkitchen.com",
+        "websiteUrl": "smittenkitchen.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image008_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "009",
+        "title": "thepioneerwoman.com",
+        "websiteUrl": "thepioneerwoman.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image009_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "010",
+        "title": "food52.com",
+        "websiteUrl": "food52.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image010_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "011",
+        "title": "thekitchn.com",
+        "websiteUrl": "thekitchn.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image011_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "012",
+        "title": "cooksillustrated.com",
+        "websiteUrl": "cooksillustrated.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image012_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "013",
+        "title": "delish.com",
+        "websiteUrl": "delish.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image013_ZeroWords_Fail.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2663",
+        "message": "API/QuickQuote - Zero words analyzed despite 'OK' (200) response"
+      },
+      {
+        "testId": "014",
+        "title": "cookstr.com",
+        "websiteUrl": "cookstr.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image014_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      },
+      {
+        "testId": "015",
+        "title": "simplyrecipes.com",
+        "websiteUrl": "simplyrecipes.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image015_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "016",
+        "title": "www.kfc.com",
+        "websiteUrl": "www.kfc.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image016_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      },
+      {
+        "testId": "017",
+        "title": "www.lowes.com",
+        "websiteUrl": "www.lowes.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image017_Pass.png",
+        "status": "Pass",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "",
+        "message": "Test passed successfully"
+      },
+      {
+        "testId": "018",
+        "title": "www.pizzahut.com",
+        "websiteUrl": "www.pizzahut.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image018_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      },
+      {
+        "testId": "019",
+        "title": "www.homedepot.com",
+        "websiteUrl": "www.homedepot.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image019_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      },
+      {
+        "testId": "020",
+        "title": "openai.com",
+        "websiteUrl": "openai.com",
+        "reporter": "Thiago",
+        "screenshotPath": "image020_Cancelled.png",
+        "status": "Fail",
+        "jiraRef": "https://github.com/thiagobardini",
+        "jiraTicket": "TICKET-2658",
+        "message": "API/QuickQuote - Cancelled - Getting 404 status"
+      }
+    ]
+  }
+]

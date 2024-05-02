@@ -114,7 +114,7 @@ test.describe("GlobalLink Go @smoke", () => {
               data: data,
               pathScreenshot: pathScreenshot,
               imageName: imageName,
-              jiraRef: "",
+              jiraRef: "Ticket-4444",
               errorMessage: `API/QuickQuote (504) has no spider jobs - Failed to connect to the website.`,
             });
           }),
