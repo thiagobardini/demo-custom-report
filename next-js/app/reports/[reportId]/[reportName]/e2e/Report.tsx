@@ -175,7 +175,7 @@ const Report = () => {
       {selectReportContext === 0 && reportData && <TicketsCovered data={reportData as ReportDescribeTypes[]} />}
 
       {/* TODO: Add logic to show the video player only if the has video */}
-      {/* <VideoPlayer src={testDescribe} alt='video' /> */}
+      <VideoPlayer src={testDescribe} alt='video' />
       <StatusCount passCount={passCount ?? 0} failCount={failCount ?? 0} />
 
       <Divider my='md' />
