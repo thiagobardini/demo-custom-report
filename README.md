@@ -95,5 +95,5 @@ Playwright is integrated into our project environment, allowing for seamless set
 </br>
 </br>
 <p align="center">
-<img src="https://www.tbardini.com/assets/TBardini-dot-dark-MIMyJ2zW.png" width="100" alt="Demo Report Logo">
+<img src="https://www.tbardini.com/assets/TBardini-dot-dark-MIMyJ2zW.png" width="200" alt="Demo Report Logo">
 </p>
