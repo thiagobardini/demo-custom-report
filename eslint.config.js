@@ -11,12 +11,11 @@ export default [
       "playwright-report",
       "summary.json",
       "script/",
-      "next-js/",
-      "playwright.config.ts"
+      "next-js/"
     ],
   },
   {
-    files: ["**/*.ts"],
+    files: ["**/*.ts", "playwright.config.ts"], 
     languageOptions: {
       parser: eslintParser,
       parserOptions: {

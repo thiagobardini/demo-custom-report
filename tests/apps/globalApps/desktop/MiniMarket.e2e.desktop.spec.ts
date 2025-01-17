@@ -1,13 +1,13 @@
 import { test, expect, TestInfo } from "@playwright/test";
-import { goToPort } from "../../../../utils/generalTestUtils";
-import configConstants from "../../../../data/configConstants.json";
-import reportId from "../../../../../next-js/public/data/reportId.json";
+import { goToPort } from "../../../utils/generalTestUtils";
+import configConstants from "../../../data/configConstants.json";
+import reportId from "../../../../next-js/public/data/reportId.json";
 
 import {
   customReportTestInfoCondition,
   customReportTestInfoTestDescribe,
   customReportTestInfoConditionPass,
-} from "../../../../utils/customReport";
+} from "../../../utils/customReport";
 
 const report = [
   {

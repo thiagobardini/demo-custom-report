@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test:ui": "npx playwright test ./tests/* --ui",
     "test:custom-report": "npx playwright test --grep @smoke",

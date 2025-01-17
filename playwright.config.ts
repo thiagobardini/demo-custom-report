@@ -40,31 +40,31 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
-      testMatch: "**/*.desktop.spec.ts", // Only run desktop tests
+      testMatch: ["**/*.desktop.spec.ts", "tests/apps/**/*.spec.ts"], // Inclua todos os testes em tests/apps
       snapshotDir: `__screenshots__/`, // Save screenshots to this directory
     },
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
-      testMatch: "**/*.desktop.spec.ts", // Only run desktop tests
+      testMatch: ["**/*.desktop.spec.ts", "tests/apps/**/*.spec.ts"], // Inclua todos os testes em tests/apps
       snapshotDir: `__screenshots__/`, // Save screenshots to this directory
     },
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
-      testMatch: "**/*.desktop.spec.ts", // Only run desktop tests
+      testMatch: ["**/*.desktop.spec.ts", "tests/apps/**/*.spec.ts"], // Inclua todos os testes em tests/apps
       snapshotDir: `__screenshots__/`, // Save screenshots to this directory
     },
     {
       name: "IOS",
       use: { ...devices["iPhone SE"] },
-      testMatch: "**/*.mobile.spec.ts", // Only run mobile tests
+      testMatch: ["**/*.mobile.spec.ts", "tests/apps/**/*.spec.ts"], // Inclua todos os testes em tests/apps
       snapshotDir: `__screenshots__/`, // Save screenshots to this directory
     },
     {
       name: "Android",
       use: { ...devices["Galaxy S III"] },
-      testMatch: "**/*.mobile.spec.ts", // Only run mobile tests
+      testMatch: ["**/*.mobile.spec.ts", "tests/apps/**/*.spec.ts"], // Inclua todos os testes em tests/apps
       snapshotDir: `__screenshots__/`, // Save screenshots to this directory
     },
     /* Test against mobile viewports. */

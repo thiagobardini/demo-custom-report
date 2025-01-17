@@ -1,18 +1,18 @@
 import { test, expect, TestInfo, Page } from "@playwright/test";
-import { goToPort } from "../../../../utils/generalTestUtils";
-import configConstants from "../../../../data/configConstants.json";
-import reportId from "../../../../../next-js/public/data/reportId.json";
+import { goToPort } from "../../../utils/generalTestUtils";
+import configConstants from "../../../data/configConstants.json";
+import reportId from "../../../../next-js/public/data/reportId.json";
 import {
   TestInfoDemoReportTypes,
   GlobalLinkWebsiteDataTypes,
   CustomReportTypes,
-} from "../../../../utils/types";
+} from "../../../utils/types";
 
 import {
   customReportTestInfoCondition,
   customReportTestInfoTestDescribe,
   customReportTestInfoConditionPass,
-} from "../../../../utils/customReport";
+} from "../../../utils/customReport";
 
 const websites: GlobalLinkWebsiteDataTypes[] = [
   {
