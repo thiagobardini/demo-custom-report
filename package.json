@@ -10,8 +10,8 @@
     "generate:custom-test-report": "node ./script/generateJsonCustomReport.js && node ./script/generateJsonCustomReportViewHistory.js && node ./script/generateJsonCustomReportIndex.js && node ./script/updateReportId.js",
     "check:types": "tsc --noEmit",
     "build": "tsc",
-    "lint": "eslint . --config eslint.config.js --ignore-pattern script --ignore-pattern next-js",
-    "lint:fix": "eslint . --fix --config eslint.config.js --ignore-pattern script --ignore-pattern next-js"
+    "lint": "eslint . --config eslint.config.cjs --ignore-pattern script --ignore-pattern next-js",
+    "lint:fix": "eslint . --fix --config eslint.config.cjs --ignore-pattern script --ignore-pattern next-js"
   },
   "keywords": [],
   "author": "",
