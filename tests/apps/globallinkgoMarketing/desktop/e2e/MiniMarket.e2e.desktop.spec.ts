@@ -43,7 +43,7 @@ test.describe("Mini Market @smoke", () => {
       testInfo.snapshotSuffix;
 
       // Custom report screenshot name & path
-      let imageName;
+      let imageName: string = "";
       const pathScreenshot = `next-test-report/public/test-report`;
 
       try {
@@ -95,7 +95,7 @@ test.describe("Mini Market @smoke", () => {
           pathScreenshot: pathScreenshot,
           imageName: imageName,
           jiraRef: "TICKET-001",
-          errorMessage: error,
+          errorMessage: error instanceof Error ? error.message : String(error),
         });
       }
     });
