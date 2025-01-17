@@ -4,7 +4,7 @@ exports.customReportTestInfoTestDescribe = customReportTestInfoTestDescribe;
 exports.customReportTestInfoCondition = customReportTestInfoCondition;
 exports.customReportTestInfoConditionPass = customReportTestInfoConditionPass;
 function customReportTestInfoTestDescribe(data) {
-    const { testInfo, testReportId, testReportName, testPath, typeOfTest, tickets } = data;
+    const { testInfo, testReportId, testReportName, testPath, typeOfTest, tickets, } = data;
     const testParams = {
         testReportId: testReportId,
         testPath: testPath,
@@ -32,7 +32,10 @@ async function customReportTestInfoCondition(customReportData) {
         screenshotPath: imageName,
     };
     const htmlDataReportDataString = JSON.stringify(htmlCustomReportData);
-    testInfo.annotations.push({ type: data.id ?? "default-type", description: htmlDataReportDataString });
+    testInfo.annotations.push({
+        type: data.id ?? "default-type",
+        description: htmlDataReportDataString,
+    });
     throw new Error(errorMessage);
 }
 async function customReportTestInfoConditionPass(customReportData) {
@@ -51,5 +54,8 @@ async function customReportTestInfoConditionPass(customReportData) {
         screenshotPath: imageName,
     };
     const htmlDataReportDataString = JSON.stringify(htmlCustomReportData);
-    testInfo.annotations.push({ type: data.id ?? "default-type", description: htmlDataReportDataString });
+    testInfo.annotations.push({
+        type: data.id ?? "default-type",
+        description: htmlDataReportDataString,
+    });
 }

@@ -19,7 +19,6 @@ const report = [
 test_1.test.describe("Mini Market @smoke", () => {
     test_1.test.setTimeout(130000);
     const testReportId = reportId_json_1.default.reportId;
-    // eslint-disable-next-line no-empty-pattern
     test_1.test.beforeEach(async ({}, testInfo) => {
         (0, customReport_1.customReportTestInfoTestDescribe)({
             testInfo: testInfo,
@@ -35,12 +34,11 @@ test_1.test.describe("Mini Market @smoke", () => {
     // Setup the test environment
     (0, generalTestUtils_1.goToPort)(miniMarketUrlPort);
     report.forEach((data) => {
-        const { email } = data;
         (0, test_1.test)("Stripe Payment", async ({ page }, testInfo) => {
             testInfo.duration;
             testInfo.snapshotSuffix;
             // Custom report screenshot name & path
-            let imageName;
+            let imageName = "";
             const pathScreenshot = `next-test-report/public/test-report`;
             try {
                 // Click on the "Start Shopping" button
@@ -84,7 +82,7 @@ test_1.test.describe("Mini Market @smoke", () => {
                     pathScreenshot: pathScreenshot,
                     imageName: imageName,
                     jiraRef: "TICKET-001",
-                    errorMessage: error,
+                    errorMessage: error instanceof Error ? error.message : String(error),
                 });
             }
         });

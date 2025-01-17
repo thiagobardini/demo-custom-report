@@ -11,7 +11,6 @@ const test_1 = require("@playwright/test");
 const goToPort = (port) => {
     test_1.test.beforeEach(async ({ page }) => {
         await page.goto(`${port}?testing=groovy`, { waitUntil: "load" });
-        // eslint-disable-next-line no-console
         page.on("console", (msg) => console.log(msg.text()));
     });
 };
@@ -23,7 +22,9 @@ const goToProject = (projectName) => {
         await page.getByPlaceholder("Search...").fill(projectName);
         await page.getByPlaceholder("Search...").press("ArrowDown");
         // Check if the project with the specified name exists
-        const projectExists = await page.getByRole("menuitem", { name: projectName, exact: true }).isVisible();
+        const projectExists = await page
+            .getByRole("menuitem", { name: projectName, exact: true })
+            .isVisible();
         if (!projectExists) {
             // Throw an error if the project is not found
             throw new Error(`Project "${projectName}" not found. Provide a valid project name.`);
@@ -83,6 +84,8 @@ async function checkIconAndTooltipVisibility(page, iconId, dataObject, dataKey) 
 }
 // Clicks a tab or button based on the tab or button name
 async function clickTabOrButton(page, testId, dataObject, tabButtonName) {
-    const tabButton = page.locator(`[data-testid="${testId}"]`, { hasText: dataObject[tabButtonName] });
+    const tabButton = page.locator(`[data-testid="${testId}"]`, {
+        hasText: dataObject[tabButtonName],
+    });
     await tabButton.click();
 }
