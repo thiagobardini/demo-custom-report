@@ -142,7 +142,7 @@ test.describe("GlobalLink Go @smoke", () => {
   test.setTimeout(130000);
   test.skip(
     ({ browserName }) => browserName !== "chromium",
-    "Test only runs on Chromium."
+    "Test only runs on Chromium.",
   );
   const testReportId = reportId.reportId as string;
 
@@ -196,13 +196,13 @@ test.describe("GlobalLink Go @smoke", () => {
       const quickQuoteResponsePromise = page.waitForResponse(
         (response) =>
           response.url().includes(`QuickQuote?domain=${encodedWebsiteUrl}`),
-        { timeout: 130000 }
+        { timeout: 130000 },
       );
 
       // Listen for the CRM API response
       const crmAPIResponsePromise = page.waitForResponse(
         (response) => response.url().includes(`CRM/objects/contacts`),
-        { timeout: 130000 }
+        { timeout: 130000 },
       );
 
       // Click the "Calculate Now" button if the fields are already filled
@@ -223,7 +223,7 @@ test.describe("GlobalLink Go @smoke", () => {
       // await quickQuoteRequestPromise;
       await page.waitForRequest(
         (request) => request.url().includes("QuickQuote?domain="),
-        { timeout: 130000 }
+        { timeout: 130000 },
       );
 
       // Go to the Words Served Estimate page
@@ -361,7 +361,7 @@ test.describe("GlobalLink Go @smoke", () => {
             imageName: imageName,
             jiraRef: "",
             errorMessage: "",
-          }
+          };
           await customReportTestInfoConditionPass(params);
         }).toPass();
       }

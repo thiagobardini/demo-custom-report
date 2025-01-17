@@ -38,7 +38,7 @@ export interface GlobalLinkWebsiteDataTypes {
   url: string;
   email: string;
   reporter: string;
-};
+}
 
 export interface CustomReportTypes {
   page: Page;

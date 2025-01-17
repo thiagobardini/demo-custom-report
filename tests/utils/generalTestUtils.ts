@@ -7,7 +7,7 @@ type DataObject = { [key: string]: string };
 const goToPort = (port: string) => {
   test.beforeEach(async ({ page }) => {
     await page.goto(`${port}?testing=groovy`, { waitUntil: "load" });
-    // eslint-disable-next-line no-console
+
     page.on("console", (msg) => console.log(msg.text()));
   });
 };
@@ -20,10 +20,14 @@ const goToProject = (projectName: string) => {
     await page.getByPlaceholder("Search...").press("ArrowDown");
 
     // Check if the project with the specified name exists
-    const projectExists = await page.getByRole("menuitem", { name: projectName, exact: true }).isVisible();
+    const projectExists = await page
+      .getByRole("menuitem", { name: projectName, exact: true })
+      .isVisible();
     if (!projectExists) {
       // Throw an error if the project is not found
-      throw new Error(`Project "${projectName}" not found. Provide a valid project name.`);
+      throw new Error(
+        `Project "${projectName}" not found. Provide a valid project name.`,
+      );
     }
 
     await page.getByRole("menuitem", { name: projectName }).press("Enter");
@@ -47,10 +51,16 @@ export function getFormattedDateTime(): string {
 }
 
 // Returns the locator for a button based on the page name
-const getLocator = (page: Page, pageName: string) => page.getByRole("button", { name: pageName });
+const getLocator = (page: Page, pageName: string) =>
+  page.getByRole("button", { name: pageName });
 
 // Checks text visibility
-async function checkTextVisibility(page: Page, textId: string, dataObject: DataObject, dataKey: string): Promise<void> {
+async function checkTextVisibility(
+  page: Page,
+  textId: string,
+  dataObject: DataObject,
+  dataKey: string,
+): Promise<void> {
   const element = page.locator(`[data-testid="${textId}"]`);
   await expect(element).toBeVisible();
 
@@ -61,13 +71,21 @@ async function checkTextVisibility(page: Page, textId: string, dataObject: DataO
 }
 
 // Checks tooltip visibility
-async function checkTooltipVisibility(page: Page, textId: string, dataObject: DataObject, dataKeyTitle: string, dataKeyTooltip: string): Promise<void> {
+async function checkTooltipVisibility(
+  page: Page,
+  textId: string,
+  dataObject: DataObject,
+  dataKeyTitle: string,
+  dataKeyTooltip: string,
+): Promise<void> {
   const tooltipTrigger = page.locator(`[data-testid="${textId}"]`);
   await tooltipTrigger.hover();
   const tooltip = page.locator('[role="tooltip"]').first();
 
   if (typeof dataObject[dataKeyTooltip] === "undefined") {
-    throw new Error(`The key '${dataKeyTooltip}' is not defined in the data object.`);
+    throw new Error(
+      `The key '${dataKeyTooltip}' is not defined in the data object.`,
+    );
   }
 
   await expect(tooltip).toHaveText(dataObject[dataKeyTooltip]);
@@ -75,7 +93,12 @@ async function checkTooltipVisibility(page: Page, textId: string, dataObject: Da
 }
 
 // Checks the visibility of an icon and its associated tooltip
-async function checkIconAndTooltipVisibility(page: Page, iconId: string, dataObject: DataObject, dataKey: string): Promise<void> {
+async function checkIconAndTooltipVisibility(
+  page: Page,
+  iconId: string,
+  dataObject: DataObject,
+  dataKey: string,
+): Promise<void> {
   const icon = page.locator(`[data-testid="${iconId}"]`);
   await icon.hover();
   const tooltip = page.locator('[role="tooltip"]').first();
@@ -88,10 +111,24 @@ async function checkIconAndTooltipVisibility(page: Page, iconId: string, dataObj
 }
 
 // Clicks a tab or button based on the tab or button name
-export async function clickTabOrButton(page: Page, testId: string, dataObject: DataObject, tabButtonName: string): Promise<void> {
-  const tabButton = page.locator(`[data-testid="${testId}"]`, { hasText: dataObject[tabButtonName] });
+export async function clickTabOrButton(
+  page: Page,
+  testId: string,
+  dataObject: DataObject,
+  tabButtonName: string,
+): Promise<void> {
+  const tabButton = page.locator(`[data-testid="${testId}"]`, {
+    hasText: dataObject[tabButtonName],
+  });
   await tabButton.click();
 }
 
 // Exports
-export { goToPort, goToProject, getLocator, checkTextVisibility, checkIconAndTooltipVisibility, checkTooltipVisibility };
+export {
+  goToPort,
+  goToProject,
+  getLocator,
+  checkTextVisibility,
+  checkIconAndTooltipVisibility,
+  checkTooltipVisibility,
+};

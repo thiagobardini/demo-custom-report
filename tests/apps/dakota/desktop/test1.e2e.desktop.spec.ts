@@ -1,6 +1,6 @@
 import { test, expect, TestInfo } from "@playwright/test";
 import { customReportTestInfoTestDescribe } from "../../../utils/customReport";
-import reportId from "../../../../next-js/public/data/reportId.json";
+// import reportId from "../../../../next-js/public/data/reportId.json";
 
 type BeforeEachParams = {
   testInfo: TestInfo;
@@ -13,10 +13,10 @@ type BeforeEachParams = {
 
 test.describe("Test1 @smoke @regression @sanity", () => {
   test("Test1", async ({ page }) => {
-    const testReportId = reportId.reportId;
+    // const testReportId = reportId.reportId;
 
     await page.goto("https://www.dakotasoft.com/");
-    
+
     test.beforeEach(async ({}, testInfo: TestInfo) => {
       const params: BeforeEachParams = {
         testInfo: testInfo,
@@ -30,9 +30,7 @@ test.describe("Test1 @smoke @regression @sanity", () => {
     });
 
     await expect(page.locator("h1")).toContainText(
-      "Drive EHS Compliance. Improve ESG Performance. Gain Actionable Insight."
+      "Drive EHS Compliance. Improve ESG Performance. Gain Actionable Insight.",
     );
-
-
   });
 });

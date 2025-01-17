@@ -3,7 +3,11 @@ import { goToPort } from "../../../../utils/generalTestUtils";
 import configConstants from "../../../../data/configConstants.json";
 import reportId from "../../../../../next-js/public/data/reportId.json";
 
-import { customReportTestInfoCondition, customReportTestInfoTestDescribe, customReportTestInfoConditionPass } from "../../../../utils/customReport";
+import {
+  customReportTestInfoCondition,
+  customReportTestInfoTestDescribe,
+  customReportTestInfoConditionPass,
+} from "../../../../utils/customReport";
 
 const report = [
   {
@@ -17,7 +21,6 @@ test.describe("Mini Market @smoke", () => {
   test.setTimeout(130000);
   const testReportId = reportId.reportId;
 
-  // eslint-disable-next-line no-empty-pattern
   test.beforeEach(async ({}, testInfo: TestInfo) => {
     customReportTestInfoTestDescribe({
       testInfo: testInfo,
@@ -35,7 +38,6 @@ test.describe("Mini Market @smoke", () => {
   // Setup the test environment
   goToPort(miniMarketUrlPort);
   report.forEach((data) => {
-    const { email } = data;
     test("Stripe Payment", async ({ page }, testInfo) => {
       testInfo.duration;
       testInfo.snapshotSuffix;

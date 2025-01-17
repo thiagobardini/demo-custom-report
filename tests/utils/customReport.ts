@@ -1,7 +1,19 @@
-import { CustomReportConditionTypes, CustomReporttDescribeTypes } from "./types";
+import {
+  CustomReportConditionTypes,
+  CustomReporttDescribeTypes,
+} from "./types";
 
-export function customReportTestInfoTestDescribe(data: CustomReporttDescribeTypes) {
-  const { testInfo, testReportId, testReportName, testPath, typeOfTest, tickets } = data;
+export function customReportTestInfoTestDescribe(
+  data: CustomReporttDescribeTypes,
+) {
+  const {
+    testInfo,
+    testReportId,
+    testReportName,
+    testPath,
+    typeOfTest,
+    tickets,
+  } = data;
   const testParams = {
     testReportId: testReportId,
     testPath: testPath,
@@ -14,8 +26,11 @@ export function customReportTestInfoTestDescribe(data: CustomReporttDescribeType
   });
 }
 
-export async function customReportTestInfoCondition(customReportData: CustomReportConditionTypes) {
-  const { page, testInfo, data, imageName, jiraRef, errorMessage } = customReportData;
+export async function customReportTestInfoCondition(
+  customReportData: CustomReportConditionTypes,
+) {
+  const { page, testInfo, data, imageName, jiraRef, errorMessage } =
+    customReportData;
 
   const pathScreenshot = `next-js/public/test-report`;
 
@@ -34,11 +49,16 @@ export async function customReportTestInfoCondition(customReportData: CustomRepo
   };
 
   const htmlDataReportDataString = JSON.stringify(htmlCustomReportData);
-  testInfo.annotations.push({ type: data.id ?? "default-type", description: htmlDataReportDataString });
+  testInfo.annotations.push({
+    type: data.id ?? "default-type",
+    description: htmlDataReportDataString,
+  });
 
   throw new Error(errorMessage);
 }
-export async function customReportTestInfoConditionPass(customReportData: CustomReportConditionTypes) {
+export async function customReportTestInfoConditionPass(
+  customReportData: CustomReportConditionTypes,
+) {
   const { page, testInfo, data, imageName, jiraRef } = customReportData;
 
   const pathScreenshot = `next-js/public/test-report`;
@@ -58,5 +78,8 @@ export async function customReportTestInfoConditionPass(customReportData: Custom
   };
 
   const htmlDataReportDataString = JSON.stringify(htmlCustomReportData);
-  testInfo.annotations.push({ type: data.id ?? "default-type", description: htmlDataReportDataString });
+  testInfo.annotations.push({
+    type: data.id ?? "default-type",
+    description: htmlDataReportDataString,
+  });
 }
