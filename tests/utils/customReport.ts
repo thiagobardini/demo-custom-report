@@ -1,6 +1,6 @@
-import { customReportConditionInterface, customReporttDescribeInterface } from "../interfaces/interfaces";
+import { CustomReportConditionTypes, CustomReporttDescribeTypes } from "./types";
 
-export function customReportTestInfoTestDescribe(data: customReporttDescribeInterface) {
+export function customReportTestInfoTestDescribe(data: CustomReporttDescribeTypes) {
   const { testInfo, testReportId, testReportName, testPath, typeOfTest, tickets } = data;
   const testParams = {
     testReportId: testReportId,
@@ -14,7 +14,7 @@ export function customReportTestInfoTestDescribe(data: customReporttDescribeInte
   });
 }
 
-export async function customReportTestInfoCondition(customReportData: customReportConditionInterface) {
+export async function customReportTestInfoCondition(customReportData: CustomReportConditionTypes) {
   const { page, testInfo, data, imageName, jiraRef, errorMessage } = customReportData;
 
   const pathScreenshot = `next-js/public/test-report`;
@@ -28,7 +28,7 @@ export async function customReportTestInfoCondition(customReportData: customRepo
     websiteId: data.id || "001",
     websiteUrl: data.url || "TestQA",
     reporter: data.reporter || "Playwright",
-    jiraRef: `https://github.com/thiagobardini` || "",
+    jiraRef: `https://github.com/thiagobardini`,
     jiraTicket: jiraRef,
     screenshotPath: imageName,
   };
@@ -38,7 +38,7 @@ export async function customReportTestInfoCondition(customReportData: customRepo
 
   throw new Error(errorMessage);
 }
-export async function customReportTestInfoConditionPass(customReportData: customReportConditionInterface) {
+export async function customReportTestInfoConditionPass(customReportData: CustomReportConditionTypes) {
   const { page, testInfo, data, imageName, jiraRef } = customReportData;
 
   const pathScreenshot = `next-js/public/test-report`;
@@ -52,7 +52,7 @@ export async function customReportTestInfoConditionPass(customReportData: custom
     websiteId: data.id || "001",
     websiteUrl: data.url || "TestQA",
     reporter: data.reporter || "Playwright",
-    jiraRef: `https://github.com/thiagobardini` || "",
+    jiraRef: `https://github.com/thiagobardini`,
     jiraTicket: jiraRef,
     screenshotPath: imageName,
   };
